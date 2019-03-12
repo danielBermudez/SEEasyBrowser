@@ -59,6 +59,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="toolBar" destination="Fwg-Y1-zVw" id="Wy3-0k-q4v"/>
                         <outlet property="webView" destination="xkN-Gz-eO6" id="b8g-FE-B6S"/>
                     </connections>
                 </viewController>
