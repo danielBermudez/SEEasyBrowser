@@ -8,15 +8,17 @@ This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAl
 import UIKit
 import WebKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var webView: WKWebView!
-    @IBAction func openPage(_ sender: UIButton) {
-        // open http://developer.apple.com
-        if let url = URL(string: "http://developer.apple.com"){
-            let request = URLRequest(url: url)
-            webView.load(request)
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        if let url = URL(string: textField.text!){
+        webView.load(URLRequest(url: url))
         }
+        return true
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
