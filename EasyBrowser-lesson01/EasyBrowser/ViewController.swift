@@ -13,13 +13,41 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var webView: WKWebView!
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        var completeLink = ""
         textField.resignFirstResponder()
-        if let url = URL(string: textField.text!){
-        webView.load(URLRequest(url: url))
-        }
-        return true
         
+        guard let urlString = textField.text else {
+            return false
+        }
+        
+        if validUrlFromString(urlString: urlString) {
+            guard let url = URL(string: urlString) else {
+                return false
+            }
+            
+            webView.load(URLRequest(url: url))
+        } else {
+            completeLink = "http://\(urlString)"
+            
+            if validUrlFromString(urlString: completeLink) {
+                guard let url = URL(string: completeLink) else {
+                    return false
+                }
+                
+                webView.load(URLRequest(url: url))
+            } else {
+                let alert = UIAlertController(title: "Invalid Url", message: "Please Try again", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+                
+                self.present(alert, animated: true)
+            }
+        }
+        
+        return true
+            
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -30,5 +58,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
 
+    private func validUrlFromString(urlString: String) -> Bool{
+        
+        if ((urlString.hasPrefix("http://") || urlString.hasPrefix("https://")) && urlString.contains(".com")){
+            return true
+        }
+        
+        return false
+
+    }
 }
 
