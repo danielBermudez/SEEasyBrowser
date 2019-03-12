@@ -13,10 +13,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var webView: WKWebView!
     @IBAction func openPage(_ sender: UIButton) {
         // open http://developer.apple.com
-        if let url = URL(string: "http://developer.apple.com"){
-            let request = URLRequest(url: url)
+        
+       setLink()
+        if let url = URL(string: UserDefaults.standard.string(forKey: "link")! ){            
+            let request = URLRequest(url:url )
             webView.load(request)
         }
+    }
+    func setLink(){
+        UserDefaults.standard.set("http://developer.apple.com", forKey: "link")
+    
     }
     override func viewDidLoad() {
         super.viewDidLoad()
