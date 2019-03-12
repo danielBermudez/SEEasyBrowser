@@ -22,22 +22,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LmM-ky-Aah">
-                                <rect key="frame" x="139" y="318.5" width="97" height="30"/>
-                                <state key="normal" title="Open in Safari"/>
+                                <rect key="frame" x="149.5" y="87" width="76" height="30"/>
+                                <state key="normal" title="Open Page"/>
                                 <connections>
-                                    <action selector="openPageInSafari:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z4o-09-7nt"/>
+                                    <action selector="openPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z4o-09-7nt"/>
                                 </connections>
                             </button>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xkN-Gz-eO6">
+                                <rect key="frame" x="0.0" y="125" width="375" height="542"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="LmM-ky-Aah" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A5v-3T-PB5"/>
-                            <constraint firstItem="LmM-ky-Aah" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="DqM-2s-0e5"/>
+                            <constraint firstItem="xkN-Gz-eO6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Bes-ID-L3j"/>
+                            <constraint firstItem="xkN-Gz-eO6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="L1w-y1-aeS"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xkN-Gz-eO6" secondAttribute="bottom" id="LBr-dP-Su8"/>
+                            <constraint firstItem="LmM-ky-Aah" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zan-G3-PEO"/>
+                            <constraint firstAttribute="trailing" secondItem="xkN-Gz-eO6" secondAttribute="trailing" id="dgW-qf-4MS"/>
+                            <constraint firstItem="LmM-ky-Aah" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="67" id="luh-5V-S89"/>
+                            <constraint firstItem="xkN-Gz-eO6" firstAttribute="top" secondItem="LmM-ky-Aah" secondAttribute="bottom" constant="8" id="qNk-qg-JWP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="xkN-Gz-eO6" id="b8g-FE-B6S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="61.600000000000001" y="27.436281859070466"/>
         </scene>
     </scenes>
 </document>

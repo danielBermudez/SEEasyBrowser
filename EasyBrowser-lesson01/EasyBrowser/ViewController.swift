@@ -6,13 +6,16 @@ This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAl
 */
 
 import UIKit
+import WebKit
 
 class ViewController: UIViewController {
 
-    @IBAction func openPageInSafari(_ sender: UIButton) {
+    @IBOutlet weak var webView: WKWebView!
+    @IBAction func openPage(_ sender: UIButton) {
         // open http://developer.apple.com
         if let url = URL(string: "http://developer.apple.com"){
-            UIApplication.shared.openURL(url)
+            let request = URLRequest(url: url)
+            webView.load(request)
         }
     }
     override func viewDidLoad() {
