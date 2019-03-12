@@ -21,31 +21,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LmM-ky-Aah">
-                                <rect key="frame" x="149.5" y="87" width="76" height="30"/>
-                                <state key="normal" title="Open Page"/>
-                                <connections>
-                                    <action selector="openPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z4o-09-7nt"/>
-                                </connections>
-                            </button>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xkN-Gz-eO6">
-                                <rect key="frame" x="0.0" y="125" width="375" height="542"/>
+                                <rect key="frame" x="0.0" y="96" width="375" height="571"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fwg-Y1-zVw">
+                                <rect key="frame" x="0.0" y="52" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Item" style="plain" id="DMg-e6-adA">
+                                        <textField key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="rBF-4M-a8F">
+                                            <rect key="frame" x="16" y="7" width="254" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="go"/>
+                                        </textField>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="rewind" id="bgb-7e-6Kb"/>
+                                    <barButtonItem systemItem="fastForward" id="gdc-hC-Lce"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="xkN-Gz-eO6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Bes-ID-L3j"/>
                             <constraint firstItem="xkN-Gz-eO6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="L1w-y1-aeS"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xkN-Gz-eO6" secondAttribute="bottom" id="LBr-dP-Su8"/>
-                            <constraint firstItem="LmM-ky-Aah" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zan-G3-PEO"/>
+                            <constraint firstItem="Fwg-Y1-zVw" firstAttribute="trailing" secondItem="xkN-Gz-eO6" secondAttribute="trailing" id="Tva-Cx-CCD"/>
+                            <constraint firstItem="Fwg-Y1-zVw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="32" id="Zv4-0P-277"/>
                             <constraint firstAttribute="trailing" secondItem="xkN-Gz-eO6" secondAttribute="trailing" id="dgW-qf-4MS"/>
-                            <constraint firstItem="LmM-ky-Aah" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="67" id="luh-5V-S89"/>
-                            <constraint firstItem="xkN-Gz-eO6" firstAttribute="top" secondItem="LmM-ky-Aah" secondAttribute="bottom" constant="8" id="qNk-qg-JWP"/>
+                            <constraint firstItem="xkN-Gz-eO6" firstAttribute="top" secondItem="Fwg-Y1-zVw" secondAttribute="bottom" id="j3z-XF-mOw"/>
+                            <constraint firstItem="Fwg-Y1-zVw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kqs-du-cS0"/>
                         </constraints>
                     </view>
                     <connections>
@@ -54,7 +64,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="61.600000000000001" y="27.436281859070466"/>
+            <point key="canvasLocation" x="504.80000000000001" y="-98.50074962518741"/>
         </scene>
     </scenes>
 </document>
