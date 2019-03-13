@@ -9,7 +9,18 @@ import UIKit
 import WebKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
-
+    @IBAction func goBack(_ sender: Any) {
+        if webView.canGoBack{
+        webView.goBack()
+        }
+    }
+    
+    @IBAction func goForward(_ sender: Any) {
+        if webView.canGoForward{
+            webView.goForward()
+        }
+    }
+    
     @IBOutlet weak var webView: WKWebView!
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

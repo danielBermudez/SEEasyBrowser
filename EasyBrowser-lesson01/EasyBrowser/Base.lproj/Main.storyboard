@@ -44,8 +44,16 @@
                                             </connections>
                                         </textField>
                                     </barButtonItem>
-                                    <barButtonItem systemItem="rewind" id="bgb-7e-6Kb"/>
-                                    <barButtonItem systemItem="fastForward" id="gdc-hC-Lce"/>
+                                    <barButtonItem systemItem="rewind" id="bgb-7e-6Kb">
+                                        <connections>
+                                            <action selector="goBack:" destination="BYZ-38-t0r" id="U1w-6o-yMN"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="fastForward" id="gdc-hC-Lce">
+                                        <connections>
+                                            <action selector="goForward:" destination="BYZ-38-t0r" id="Bip-uz-Y7t"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
