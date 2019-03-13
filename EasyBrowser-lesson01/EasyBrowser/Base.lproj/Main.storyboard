@@ -70,6 +70,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="goBack" destination="bgb-7e-6Kb" id="BXO-7R-v1E"/>
+                        <outlet property="goForward" destination="gdc-hC-Lce" id="SpT-J4-Mhu"/>
                         <outlet property="webView" destination="xkN-Gz-eO6" id="b8g-FE-B6S"/>
                     </connections>
                 </viewController>
